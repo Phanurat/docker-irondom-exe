@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  run-main333111:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wine-main333111
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: wine main333111.exe
