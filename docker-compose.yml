@@ -7,5 +7,6 @@ services:
       - .:/app
     working_dir: /app
     environment:
-      - DBFOLDER=acc001
-    command: ["wine", "main333111.exe"]
+      - DBFOLDER=${DBFOLDER}
+      - EXE_NAME=${EXE_NAME}
+    command: sh -c "wine \$EXE_NAME"
