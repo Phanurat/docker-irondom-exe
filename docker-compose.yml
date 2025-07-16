@@ -5,8 +5,9 @@ services:
     build: .
     container_name: wine_runner_container
     volumes:
-      - ./:/app  # แมปโฟลเดอร์โปรเจกต์ทั้งหมด เข้า /app ใน container
+      - ./:/app
     working_dir: /app
     environment:
       - DBFOLDER=acc001
+      - TZ=Asia/Bangkok
     command: wine main333111.exe
