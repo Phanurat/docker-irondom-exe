@@ -1,9 +1,8 @@
-FROM wine/wine:latest
+FROM jlesage/wine:latest
 
 WORKDIR /app
 COPY . .
 
-ENV WINEDEBUG=-all
 ENV DBFOLDER=acc001
 ENV EXE_NAME=main333111.exe
 
