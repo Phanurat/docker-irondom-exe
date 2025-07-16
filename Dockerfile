@@ -1,4 +1,4 @@
-FROM i386/wine:latest
+FROM wine/wine:latest
 
 WORKDIR /app
 COPY . .
