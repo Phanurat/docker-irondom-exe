@@ -5,8 +5,7 @@ services:
     build: .
     volumes:
       - .:/app
-    working_dir: /app
     environment:
       - DBFOLDER=${DBFOLDER}
       - EXE_NAME=${EXE_NAME}
-    command: sh -c "wine \$EXE_NAME"
+    working_dir: /app
