@@ -1,11 +1,12 @@
 version: '3.8'
 
 services:
-  exe_runner:
+  wine-runner:
     build: .
+    container_name: wine_runner_container
     volumes:
-      - .:/app
-    environment:
-      - DBFOLDER=${DBFOLDER}
-      - EXE_NAME=${EXE_NAME}
+      - ./:/app  # แมปโฟลเดอร์โปรเจกต์ทั้งหมด เข้า /app ใน container
     working_dir: /app
+    environment:
+      - DBFOLDER=acc001
+    command: wine main333111.exe

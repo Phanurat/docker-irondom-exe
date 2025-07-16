@@ -1,9 +1,11 @@
-FROM jlesage/wine:latest
+FROM ubuntu:20.04
+
+RUN dpkg --add-architecture i386 && \
+    apt-get update && \
+    apt-get install -y wine32 wget
 
 WORKDIR /app
-COPY . .
 
 ENV DBFOLDER=acc001
-ENV EXE_NAME=main333111.exe
 
-CMD ["sh", "-c", "wine $EXE_NAME"]
+CMD ["wine", "main333111.exe"]
