@@ -1,13 +1,10 @@
 version: '3.8'
-
 services:
-  wine-runner:
+  wine-app:
     build: .
-    container_name: wine_runner_container
+    container_name: wine_container
     volumes:
-      - ./:/app
-    working_dir: /app
+      - ./data:/home/wineuser/data
     environment:
-      - DBFOLDER=acc001
-      - TZ=Asia/Bangkok
-    command: wine main333111.exe
+      - DISPLAY=:0
+    tty: true
